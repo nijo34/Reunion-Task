@@ -14,10 +14,7 @@ app.use(morganMiddleware)
 app.use(userRouter)
 
 app.get('*', ( req, res )=> {
-  res.json({
-    status : true,
-    msg: 'Reunioin task submission'
-  })
+  res.redirect('/health')
 })
 
 app.get('/health', (req, res) => {
