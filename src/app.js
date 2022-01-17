@@ -12,6 +12,13 @@ app.use(morganMiddleware)
 
 app.use(userRouter)
 
+app.get('/', ( req, res )=> {
+  res.json({
+    status : true,
+    msg: 'Reunioin task submission'
+  })
+})
+
 app.get('/health', (req, res) => {
     res.json({
       status: true,
