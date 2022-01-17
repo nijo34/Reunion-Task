@@ -19,7 +19,7 @@ app.get('/health', (req, res) => {
   })
 })
 
-app.listen(process.env.PORT|| PORT, ()=>{
+app.listen(process.env.PORT|| 3000, ()=>{
     console.log('Server is up on port ' + PORT)
 })
 
