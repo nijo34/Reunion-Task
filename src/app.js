@@ -1,8 +1,9 @@
 const cors = require('cors')
 const express = require('express')
 const userRouter = require('./routers/user')
-const { PORT } = require('../config/index')
 const morganMiddleware = require('./middlewares/morgan')
+
+const PORT = process.env.PORT || 3000 
 
 const app = express()
 
@@ -26,7 +27,7 @@ app.get('/health', (req, res) => {
   })
 })
 
-app.listen(process.env.PORT|| 3000, ()=>{
+app.listen(PORT, ()=>{
     console.log('Server is up on port ' + PORT)
 })
 
