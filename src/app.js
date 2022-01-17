@@ -11,8 +11,6 @@ app.use(express.json())
 app.use(cors())
 app.use(morganMiddleware)
 
-app.use(userRouter)
-
 app.get('*', ( req, res )=> {
   res.redirect('/health')
 })
@@ -23,6 +21,9 @@ app.get('/health', (req, res) => {
       msg:'App is running fine!'
   })
 })
+
+app.use(userRouter)
+
 
 app.listen(PORT, ()=>{
     console.log('Server is up on port ' + PORT)
